@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="fr-FR">
+<html lang="fr">
 
 <head>
-    <!-- Meta Data -->
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Scop-AICI</title>
     <meta name="description"
         content="La Société Coopérative des Acteurs des Industries Culturelles Créatives de Côte d'Ivoire (Scop-AICI) a pour objet la satisfaction des besoins économiques sociaux et culturels de ses membres.">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#109177">
     <meta name="keywords" content="John, Kokar, Dibloni" />
     <meta name="author" content="John Kokar, Scop-AICI" />
@@ -24,10 +23,114 @@
     <link rel="stylesheet" href="style.css">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/logo.jpeg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            color: #4CAF50;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .buttons a {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .buttons a:hover {
+            background-color: #45a049;
+        }
+
+        @media (min-width: 600px) {
+            .buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .buttons a {
+                margin: 0 10px;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <header style="display: flex; align-items: center; justify-content: center; text-align: center; column-gap: 20px;">
+        <div style="height: 40px; width: 50px; overflow: hidden; border-radius: 12%;">
+            <img src="assets/logo.jpeg" style="height: 100%; width: 100%;" alt="">
+        </div>
+        <h1 style="color: #ffffff; font-weight: bold;">Scop-AICI</h1>
+    </header>
 
+    <main>
+        <h2>À propos de nous</h2>
+        <p>
+            La Société Coopérative des Acteurs des Industries Culturelles Créatives de Côte d'Ivoire (Scop-AICI) a pour
+            objet la satisfaction des besoins économiques sociaux et culturels de ses membres.
+        </p>
+        <p>
+            La Scop-AICI est un instrument de lutte contre la pauvreté et la précarité dans le secteur des ICC et offre
+            à ses coopérateurs les moyens de parvenir à la liberté économique et l'autonomie financière.
+        </p>
+        <div class="buttons" id="buttons">
+            <a href="login.html">Se connecter</a>
+            <a href="signup.html">Créer un compte</a>
+        </div>
+    </main>
 </body>
+<script>
+    const phone = sessionStorage.getItem('phone');
+
+    if (phone) {
+        document.getElementById('buttons').innerHTML = `
+            <a style="cursor: pointer;" onclick="Diconnection()">Se deconnecter</a>
+            <a href="profile.html">Compte</a>
+        `;
+    }
+
+    function Diconnection(params) {
+        var result = window.confirm("Etes vous sur ne vouloir, vous deconnectez?");
+        if (result) {
+            sessionStorage.clear();
+            window.location.reload()
+        }
+    }
+</script>
 
 </html>

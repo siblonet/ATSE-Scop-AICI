@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un compte - Scop-AICI</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/logo.jpeg">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .signup-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .signup-container h2 {
+            color: #4CAF50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .signup-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .signup-container input {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .signup-container .button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .signup-container .button:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 600px) {
+            .signup-container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="signup-container">
+        <h2>Créer un compte</h2>
+        <form>
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" required>
+
+            <label for="prenoms">Prénoms</label>
+            <input type="text" id="prenoms" name="prenoms" required>
+
+            <label for="telephone">Téléphone</label>
+            <input type="text" id="telephone" name="telephone" required>
+
+            <label for="domicile">Domicile</label>
+            <input type="text" id="domicile" name="domicile" required>
+
+            <label for="metier">Métier</label>
+            <input type="text" id="metier" name="metier" required>
+
+            <label for="parts">Nombre de parts souscrites</label>
+            <input type="number" id="parts" name="parts" required>
+
+            <label for="password">Créer un mot de passe</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="passwordr">Répetez le mot de passe</label>
+            <input type="password" id="passwordr" name="passwordr" required>
+
+            <a class="button" onclick="Signup()">Créer un compte</a>
+        </form>
+    </div>
+</body>
+<script src="./datatbasehandla.js"></script>
+<script src="./accounte.js"></script>
+
+</html>
